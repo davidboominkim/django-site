@@ -1,4 +1,4 @@
-"web: gunicorn mysite.wsgi --log-file -" 
+web: gunicorn mysite.wsgi
 release:
 	python manage.py makemigrations
 	python manage.py migrate --run-syncdb
