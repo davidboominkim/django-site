@@ -1,9 +1,30 @@
-<h1>{{ question.question_text }}</h1>
+{# Load the tag library #}
+{% load bootstrap4 %}
 
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+{% load static %}
+
+<div class="container p-3 my-3 bg-dark text-white">
+  <h1 class="display-3">{{question.question_text}}</h1>
+ </div>
+<div class = "container">
 <ul>
 {% for choice in question.choice_set.all %}
     <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
 {% endfor %}
 </ul>
 
-<a href="{% url 'polls:detail' question.id %}">Vote again?</a>
+    <a href="{% url 'polls:detail' question.id %}" class="btn btn-outline-info btn-lg" role="button">Vote Again?</a>
+    <a href="{% url 'polls:post_thought' %}" class="btn btn-outline-info btn-lg" role="button">Have Any Thoughts?</a>
+    <a href="{% url 'polls:index' %}" class="btn btn-outline-info btn-lg" role="button">Back to Polls</a>
+    </div>
+
+<div class="jumbotron m-5 text-center" style="margin-bottom:0">
+  <p>Website by: David B Kim <br> For: CS 3240<br> Copyright 2021</p>
+</div>

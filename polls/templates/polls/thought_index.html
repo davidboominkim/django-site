@@ -1,0 +1,48 @@
+
+
+{# Load the tag library #}
+{% load bootstrap4 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+<div class="container p-3 my-3 bg-dark text-white">
+  <h1 class="display-3">Some Thoughts</h1>
+ </div>
+
+
+<div class="container">
+{% if latest_thought_list %}
+    <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th>Thought Title</th>
+        <th>Thought Text</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for thought in latest_thought_list %}
+        <tr>
+        <td>{{thought.thought_title}}</td>
+        <td>{{thought.thought_text}}</td>
+         </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
+{% else %}
+    <p>No thoughts present.</p>
+{% endif %}
+
+    <a href="{% url 'polls:post_thought' %}" class="btn btn-outline-info btn-lg" role="button">Think Again?</a>
+<a href="{% url 'polls:index' %}" class="btn btn-outline-info btn-lg" role="button">Back to Polls</a>
+
+</div>
+
+<div class="jumbotron m-5 text-center" style="margin-bottom:0">
+  <p>Website by: David B Kim <br> For: CS 3240<br> Copyright 2021</p>
+</div>

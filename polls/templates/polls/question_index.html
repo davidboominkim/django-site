@@ -1,0 +1,41 @@
+{# Load the tag library #}
+{% load bootstrap4 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+{% load static %}
+
+<!--<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">-->
+<div class="container p-3 my-3 bg-dark text-white">
+  <h1 class="display-3">Welcome to The Polls List!</h1>
+ </div>
+
+<div class="container">
+  <h1 class="display-5">Available Polls</h1>
+ </div>
+{% if latest_question_list %}
+    <div class="container">
+    {% for question in latest_question_list %}
+        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+    {% endfor %}
+    </div>
+{% else %}
+    <div class="container">
+        <p>No polls are available.</p>
+    </div>
+{% endif %}
+<div class="container pt-3">
+    <a href="{% url 'polls:post_thought' %}" class="btn btn-info" role="button">Thinking Anything?</a> <br>
+
+
+
+</div>
+
+<div class="jumbotron m-5 text-center" style="margin-bottom:0">
+  <p>Website by: David B Kim <br> For: CS 3240<br> Copyright 2021</p>
+</div>

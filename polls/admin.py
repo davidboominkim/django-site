@@ -1,7 +1,7 @@
 
 from django.contrib import admin
 
-from .models import Question, Choice
+from .models import Question, Choice, Thought
 # Register your models here.
 
 class ChoiceInline(admin.TabularInline):
@@ -20,4 +20,8 @@ class QuestionAdmin(admin.ModelAdmin):
 
 admin.site.register(Question, QuestionAdmin)
 
+# admin.site.register(Thought)
 
+@admin.register(Thought)
+class ThoughtAdmin(admin.ModelAdmin):
+    list_display = ('thought_title', 'thought_text')

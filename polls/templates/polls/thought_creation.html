@@ -1,0 +1,42 @@
+{# Load the tag library #}
+{% load bootstrap4 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+<div class="card-body">
+        {% if new_thought %}
+        <div class="alert alert-success" role="alert">
+          <div class="container p-3 my-3 bg-dark text-white">
+        <h1 class="display-3">Thanks for Thinking!</h1>
+
+
+            <a href="{% url 'polls:post_thought' %}">{{ "Think again?" }}</a> <br>
+            <a href="{% url 'polls:thought_index' %}">{{ "Remember your thoughts?" }}</a>
+              </div>
+        </div>
+        {% else %}
+    <div class="container p-3 my-3 bg-dark text-white">
+        <h1 class="display-3">Thinking Anything?</h1>
+            </div>
+    <div class="container">
+        <form method="post" style="margin-top: 1.3em;">
+          {{ thought_form.as_p }}
+          {% csrf_token %}
+            <div class="alert alert-warning">
+    <strong>Be careful!</strong> Thoughts cannot be "re-thought." Think carefully before submitting your thought!
+    </div>
+          <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
+            <a href="{% url 'polls:thought_index' %}" class="btn btn-primary btn-lg" role="button">See Previous Thoughts</a>
+        </form>
+        {% endif %}
+        </div>
+      </div>
+
+<div class="jumbotron m-5 text-center" style="margin-bottom:0">
+  <p>Website by: David B Kim <br> For: CS 3240<br> Copyright 2021</p>
+</div>

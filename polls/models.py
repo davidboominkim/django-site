@@ -26,3 +26,9 @@ class Choice(models.Model):
     def __str__(self):
         return self.choice_text
 # Create your models here.
+
+class Thought(models.Model):
+    thought_title = models.CharField(max_length=200)
+    thought_text = models.TextField()
+    def __str__(self):
+        return self.thought_title
