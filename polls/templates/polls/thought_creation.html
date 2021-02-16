@@ -15,8 +15,8 @@
         <h1 class="display-3">Thanks for Thinking!</h1>
 
 
-            <a href="{% url 'polls:post_thought' %}">{{ "Think again?" }}</a> <br>
-            <a href="{% url 'polls:thought_index' %}">{{ "Remember your thoughts?" }}</a>
+            <a href="{% url 'polls:post_thought' %}" class="btn btn-primary btn-lg" role="button">{{ "Think again?" }}</a>
+            <a href="{% url 'polls:thought_index' %}" class="btn btn-primary btn-lg" role="button">See Previous Thoughts</a>
               </div>
         </div>
         {% else %}

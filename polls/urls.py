@@ -22,6 +22,6 @@ urlpatterns = [
 
     # path('thoughts/', views.think, name='thought_sub'),
     path('thoughts/list', views.index, name='thought_index'),
-    path('thoughts/<int:thought_id>/', views.detail, name='thought_detail')
+    # path('thoughts/<int:thought_id>/', views.detail, name='thought_detail')
 
 ]
