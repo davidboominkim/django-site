@@ -8,6 +8,20 @@
 {# Display django.contrib.messages as Bootstrap alerts #}
 {% bootstrap_messages %}
 
+<nav class="navbar navbar-expand-sm bg-dark justify-content-center">
+    <h1 class="display-5 text-white"><small>Helpful Links</small></h1>
+  <ul class="navbar-nav px-3">
+    <li class="nav-item">
+      <a class="nav-link" href="https://en.wikipedia.org/wiki/Thought">Thoughts</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="https://en.wikipedia.org/wiki/Question">Questions</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="https://www.amnh.org/exhibitions/frogs-a-chorus-of-colors/frog-fun-facts">Frogs</a>
+    </li>
+  </ul>
+</nav>
 <div class="card-body">
         {% if new_thought %}
         <div class="alert alert-success" role="alert">

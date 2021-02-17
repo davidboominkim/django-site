@@ -9,6 +9,20 @@
 {% bootstrap_messages %}
 
 {% load static %}
+<nav class="navbar navbar-expand-sm bg-dark justify-content-center">
+    <h1 class="display-5 text-white"><small>Helpful Links</small></h1>
+  <ul class="navbar-nav px-3">
+    <li class="nav-item">
+      <a class="nav-link" href="https://en.wikipedia.org/wiki/Thought">Thoughts</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="https://en.wikipedia.org/wiki/Question">Questions</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="https://www.amnh.org/exhibitions/frogs-a-chorus-of-colors/frog-fun-facts">Frogs</a>
+    </li>
+  </ul>
+</nav>
 
 <!--<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">-->
 <div class="container p-3 my-3 bg-dark text-white">
@@ -29,7 +43,7 @@
         <p>No polls are available.</p>
     </div>
 {% endif %}
-<div class="container pt-3">
+<div class="container pt-3 mx-auto" style="width:150px">
     <a href="{% url 'polls:post_thought' %}" class="btn btn-info" role="button">Thinking Anything?</a> <br>
 
 

@@ -11,7 +11,8 @@ from .forms import ThoughtForm
 class IndexView(generic.ListView):
     template_name = 'polls/question_index.html'
     context_object_name = 'latest_question_list'
-    context_object_name2 = 'latest_thought_list'
+    latest_question_list = Question.objects.filter()
+    # context_object_name2 = 'latest_thought_list'
     def get_queryset(self):
         """
         Return the last five published questions (not including those set to be
