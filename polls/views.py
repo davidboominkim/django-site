@@ -62,14 +62,14 @@ def vote(request, question_id):
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
 
 # Create your views here.
-
-def detail(request, thought_id):
-    thought = get_object_or_404(Thought, pk=thought_id)
-    return render(request, 'polls/thought_detail.html', {'thought': thought})
-
-
-def think(request):
-    return HttpResponse("You're thinking a thought.")
+#
+# def detail(request, thought_id):
+#     thought = get_object_or_404(Thought, pk=thought_id)
+#     return render(request, 'polls/thought_detail.html', {'thought': thought})
+#
+#
+# def think(request):
+#     return HttpResponse("You're thinking a thought.")
 
 def post_thought(request):
     template_name = 'polls/thought_creation.html'
